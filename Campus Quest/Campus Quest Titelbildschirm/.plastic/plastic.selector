@@ -1,4 +1,0 @@
-repository "Campus Quest@be23b090@cloud"
-  path "/"
-    br "/main"
-    co "/main"
