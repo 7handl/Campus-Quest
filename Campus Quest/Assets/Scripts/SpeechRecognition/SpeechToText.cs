@@ -79,11 +79,15 @@ public class SpeechToText : MonoBehaviour
     {
         sttField.SetActive(true);
         sttActive = true;
-
-
     }
 
-    public void StartSTT()
+    public void DeActivateSTT()
+    {
+        sttField.SetActive(false);
+        sttActive = false;
+    }
+
+    private void StartSTT()
     {
         clip = Microphone.Start(null, false, 10, 44100);
         Debug.Log("Started");
@@ -93,7 +97,7 @@ public class SpeechToText : MonoBehaviour
         
     }
 
-    public void StopSTT()
+    private void StopSTT()
     {
         
         var position = Microphone.GetPosition(null);
@@ -115,13 +119,13 @@ public class SpeechToText : MonoBehaviour
     }
 
 
-    void DisableAction()
+    private void DisableAction()
     {
         actionToDisable.action.Disable();
         Debug.Log("ActionDisabled");
     }
 
-    void EnableAction()
+    private void EnableAction()
     {
         actionToDisable.action.Enable();
         Debug.Log("ActionEnabled");

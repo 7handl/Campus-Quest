@@ -120,6 +120,8 @@ public class DialogueManager : MonoBehaviour
         {
             SpeechToText.GetInstance().ActivateSTT();
         }
+        else { SpeechToText.GetInstance().DeActivateSTT(); }
+        
 
         int index = 0;
         // enable and initialize the choices up to the amount of choices for this line of dialogue

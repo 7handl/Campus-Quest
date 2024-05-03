@@ -1001,7 +1001,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cacd82a149de9a24bb79634acc95949d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LevelName: Level 1
+  LevelName: Dialog
 --- !u!114 &1165228376
 MonoBehaviour:
   m_ObjectHideFlags: 0
