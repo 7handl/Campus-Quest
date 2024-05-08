@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public Virus virus;
+    public Virus[] virus;
 
     public Zelle zelle;
 
@@ -28,8 +28,8 @@ public class GameManager : MonoBehaviour
 
     private void NewGame()
     {
-        setScore(0);
-        setLeben(3);
+        SetScore(0);
+        SetLeben(3);
         NewRound();
     }
 
@@ -63,26 +63,26 @@ public class GameManager : MonoBehaviour
         this.zelle.gameObject.SetActive(false);
     }
 
-    private void setScore(int score)
+    private void SetScore(int score)
     {
         this.score = score;
     }
 
-    private void setLeben(int leben)
+    private void SetLeben(int leben)
     {
         this.leben = leben;
     }
 
     public void VirusGegessen(Virus virus)
     {
-        setScore(this.score + virus.points);
+        SetScore(this.score + virus.points);
     }
 
     public void ZelleGegessen()
     {
         this.zelle.gameObject.SetActive(false);
 
-        setLeben(this.leben - 1);
+        SetLeben(this.leben - 1);
 
         if (this.leben > 0)
         {
