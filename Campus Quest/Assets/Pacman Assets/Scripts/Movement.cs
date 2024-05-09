@@ -48,6 +48,14 @@ public class Movement : MonoBehaviour
         this.enabled = true;
     }
 
+    private void Update()
+    {
+        if (this.nextDirection != Vector2.zero)
+        {
+            SetDirection(this.nextDirection);
+        }
+    }
+
     private void FixedUpdate()
     {
         Vector2 position = this.rigidbody.position;
@@ -57,9 +65,18 @@ public class Movement : MonoBehaviour
         this.rigidbody.MovePosition(position + translation);
     }
 
-    public void SetDirection(Vector2 direction)
+    public void SetDirection(Vector2 direction, bool forced = false)
     {
+        if (forced || !Occupied(direction))
+        {
+            this.direction = direction;
 
+            this.nextDirection = Vector2.zero;
+        }
+        else
+        {
+            this.nextDirection = direction;
+        }
     }
 
     public bool Occupied(Vector2 direction)

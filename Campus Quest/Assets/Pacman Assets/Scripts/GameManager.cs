@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
 
     public Transform molekuel;
 
+    public int virusMultiplier { get; private set; } = 1;
+
     public int score { get; private set; }
 
     public int leben { get; private set; }
@@ -45,12 +47,14 @@ public class GameManager : MonoBehaviour
 
     private void ResetState()
     {
+        ResetVirusMultiplier();
+
         for (int i = 0; i < this.virus.Length; i++)
         {
-            this.virus[i].gameObject.SetActive(true);
+            this.virus[i].ResetState();
         }
 
-        this.zelle.gameObject.SetActive(true);
+        this.zelle.ResetState();
     }
 
     private void GameOver()
@@ -75,7 +79,10 @@ public class GameManager : MonoBehaviour
 
     public void VirusGegessen(Virus virus)
     {
-        SetScore(this.score + virus.points);
+        int points = virus.points * this.virusMultiplier;
+        SetScore(this.score + points);
+
+        this.virusMultiplier++;
     }
 
     public void ZelleGegessen()
@@ -91,5 +98,45 @@ public class GameManager : MonoBehaviour
         {
             GameOver();
         }
+    }
+
+    public void MolekuelGegessen(Molekül molekuel)
+    {
+        molekuel.gameObject.SetActive(false);
+
+        SetScore(this.score + molekuel.points);
+
+        if (!RemainingMolekuele())
+        {
+            this.zelle.gameObject.SetActive(false);
+            Invoke(nameof(NewRound), 3.0f);
+        }
+    }
+
+    public void MedizinGegessen(Medizin molekuel)
+    {
+        MolekuelGegessen(molekuel);
+
+        CancelInvoke();
+
+        Invoke(nameof(ResetVirusMultiplier), molekuel.dauer);
+    }
+
+    private bool RemainingMolekuele()
+    {
+        foreach (Transform molekuel in this.molekuel)
+        {
+            if (molekuel.gameObject.activeSelf)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    private void ResetVirusMultiplier()
+    {
+        this.virusMultiplier = 1;
     }
 }
