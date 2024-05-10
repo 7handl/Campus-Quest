@@ -115,6 +115,11 @@ public class GameManager : MonoBehaviour
 
     public void MedizinGegessen(Medizin molekuel)
     {
+        for (int i = 0; i < this.virus.Length; i++) 
+        {
+            this.virus[i].frightened.Enable(molekuel.dauer);
+        }
+        
         MolekuelGegessen(molekuel);
 
         CancelInvoke();
