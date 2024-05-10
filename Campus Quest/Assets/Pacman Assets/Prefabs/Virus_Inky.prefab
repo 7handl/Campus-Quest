@@ -70,8 +70,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5566699083222805323, guid: e84bf6ec95c1c584c9c03552792fcff3, type: 3}
       propertyPath: m_Name
-      value: Virus_Base Variant
+      value: Virus_Inky
       objectReference: {fileID: 0}
+    - target: {fileID: 6427073626255467249, guid: e84bf6ec95c1c584c9c03552792fcff3, type: 3}
+      propertyPath: initialBehavior
+      value: 
+      objectReference: {fileID: 6713961050501887574}
     - target: {fileID: 6511283522600474484, guid: e84bf6ec95c1c584c9c03552792fcff3, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -81,3 +85,14 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e84bf6ec95c1c584c9c03552792fcff3, type: 3}
+--- !u!114 &6713961050501887574 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 694734119738332062, guid: e84bf6ec95c1c584c9c03552792fcff3, type: 3}
+  m_PrefabInstance: {fileID: 6091392277075322312}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee0e978871ad669449766902c6f5f238, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

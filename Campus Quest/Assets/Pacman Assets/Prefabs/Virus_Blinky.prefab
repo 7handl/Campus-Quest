@@ -72,6 +72,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 6427073626255467249, guid: e84bf6ec95c1c584c9c03552792fcff3, type: 3}
+      propertyPath: initialBehavior
+      value: 
+      objectReference: {fileID: 2454941874638176293}
     - target: {fileID: 6511283522600474484, guid: e84bf6ec95c1c584c9c03552792fcff3, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -81,3 +85,14 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e84bf6ec95c1c584c9c03552792fcff3, type: 3}
+--- !u!114 &2454941874638176293 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6247974660858157080, guid: e84bf6ec95c1c584c9c03552792fcff3, type: 3}
+  m_PrefabInstance: {fileID: 8405114904115009597}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d796434b01c635c428d46529c4b6a0cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

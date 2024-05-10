@@ -59,4 +59,18 @@ public class Virus : MonoBehaviour
             this.initialBehavior.Enable();
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Zelle"))
+        {
+            if (this.frightened.enabled)
+            {
+                FindObjectOfType<GameManager>().VirusGegessen(this);
+            } else
+            {
+                FindObjectOfType<GameManager>().ZelleGegessen();
+            }
+        }
+    }
 }

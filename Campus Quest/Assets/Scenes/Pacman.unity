@@ -123,6 +123,28 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &95013660 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3284665713081514700, guid: 715f9aabfc82a304eb5a9b715184427c, type: 3}
+  m_PrefabInstance: {fileID: 660527730}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23f149799ac90f44b83e7966b560920a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &111148701 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 988949590333769529, guid: 477826bc1978f5047849af05d54d5bbb, type: 3}
+  m_PrefabInstance: {fileID: 915056110}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23f149799ac90f44b83e7966b560920a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &148609046
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -134,6 +156,10 @@ PrefabInstance:
     - target: {fileID: 528134412248697609, guid: 06fe0011c0030c2459b3b3c4f2f5d3cc, type: 3}
       propertyPath: initialDirection.y
       value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1025317729612090384, guid: 06fe0011c0030c2459b3b3c4f2f5d3cc, type: 3}
+      propertyPath: dauer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5394885022493996229, guid: 06fe0011c0030c2459b3b3c4f2f5d3cc, type: 3}
       propertyPath: m_Name
@@ -179,6 +205,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6822695478070984063, guid: 06fe0011c0030c2459b3b3c4f2f5d3cc, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 642378963}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2984,7 +3014,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 604d2e5bd4c3906488576224e2222314, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  virus: []
+  virus:
+  - {fileID: 95013660}
+  - {fileID: 111148701}
+  - {fileID: 642107905}
+  - {fileID: 1973573327}
   zelle: {fileID: 642378959}
   molekuel: {fileID: 253673694}
 --- !u!4 &583655314
@@ -3010,6 +3044,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 592602594594607513, guid: 8b2c673051d6e7a4199244ad5be5b66d, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 642378963}
     - target: {fileID: 1967611852631161368, guid: 8b2c673051d6e7a4199244ad5be5b66d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2
@@ -3054,11 +3092,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Virus_Clyde
       objectReference: {fileID: 0}
+    - target: {fileID: 6389733222450503926, guid: 8b2c673051d6e7a4199244ad5be5b66d, type: 3}
+      propertyPath: dauer
+      value: 16
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b2c673051d6e7a4199244ad5be5b66d, type: 3}
+--- !u!114 &642107905 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6822695478070984063, guid: 06fe0011c0030c2459b3b3c4f2f5d3cc, type: 3}
+  m_PrefabInstance: {fileID: 148609046}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23f149799ac90f44b83e7966b560920a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &642378958
 GameObject:
   m_ObjectHideFlags: 0
@@ -3267,6 +3320,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3284665713081514700, guid: 715f9aabfc82a304eb5a9b715184427c, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 642378963}
     - target: {fileID: 4171481332165194614, guid: 715f9aabfc82a304eb5a9b715184427c, type: 3}
       propertyPath: m_Name
       value: Virus_Blinky
@@ -3324,6 +3381,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 988949590333769529, guid: 477826bc1978f5047849af05d54d5bbb, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 642378963}
     - target: {fileID: 1857763785987395203, guid: 477826bc1978f5047849af05d54d5bbb, type: 3}
       propertyPath: m_Name
       value: Virus_Inky
@@ -3367,6 +3428,10 @@ PrefabInstance:
     - target: {fileID: 2219834864066636984, guid: 477826bc1978f5047849af05d54d5bbb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6713961050501887574, guid: 477826bc1978f5047849af05d54d5bbb, type: 3}
+      propertyPath: dauer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10348,6 +10413,17 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!114 &1973573327 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 592602594594607513, guid: 8b2c673051d6e7a4199244ad5be5b66d, type: 3}
+  m_PrefabInstance: {fileID: 611887779}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23f149799ac90f44b83e7966b560920a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
