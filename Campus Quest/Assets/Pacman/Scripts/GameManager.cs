@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    
     public Virus[] virus;
 
     public Zelle zelle;
@@ -14,6 +15,7 @@ public class GameManager : MonoBehaviour
     public int score { get; private set; }
 
     public int leben { get; private set; }
+
 
     private void Start()
     {
