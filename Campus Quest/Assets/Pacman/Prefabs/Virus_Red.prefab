@@ -1,0 +1,142 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &8405114904115009597
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 57094862278153351, guid: e84bf6ec95c1c584c9c03552792fcff3, type: 3}
+      propertyPath: initialDirection.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 899640667635701524, guid: e84bf6ec95c1c584c9c03552792fcff3, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 85b743080622ab845a2234872c4cf59a, type: 3}
+    - target: {fileID: 1627769997916806663, guid: e84bf6ec95c1c584c9c03552792fcff3, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d4389729e9ff89441a8188bc1e5fcd57, type: 3}
+    - target: {fileID: 2355246610756051386, guid: e84bf6ec95c1c584c9c03552792fcff3, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9ab320fe5567fa546b0b9c959258ce46, type: 3}
+    - target: {fileID: 2355246610756051386, guid: e84bf6ec95c1c584c9c03552792fcff3, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2355246610756051386, guid: e84bf6ec95c1c584c9c03552792fcff3, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2355246610756051386, guid: e84bf6ec95c1c584c9c03552792fcff3, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3578170979588253387, guid: e84bf6ec95c1c584c9c03552792fcff3, type: 3}
+      propertyPath: sprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 85b743080622ab845a2234872c4cf59a, type: 3}
+    - target: {fileID: 3578170979588253387, guid: e84bf6ec95c1c584c9c03552792fcff3, type: 3}
+      propertyPath: sprites.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: a79240b96db28e0438a14f927fa7d3da, type: 3}
+    - target: {fileID: 5352115894662842736, guid: e84bf6ec95c1c584c9c03552792fcff3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5352115894662842736, guid: e84bf6ec95c1c584c9c03552792fcff3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5352115894662842736, guid: e84bf6ec95c1c584c9c03552792fcff3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5352115894662842736, guid: e84bf6ec95c1c584c9c03552792fcff3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5352115894662842736, guid: e84bf6ec95c1c584c9c03552792fcff3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5352115894662842736, guid: e84bf6ec95c1c584c9c03552792fcff3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5352115894662842736, guid: e84bf6ec95c1c584c9c03552792fcff3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5352115894662842736, guid: e84bf6ec95c1c584c9c03552792fcff3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5352115894662842736, guid: e84bf6ec95c1c584c9c03552792fcff3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5352115894662842736, guid: e84bf6ec95c1c584c9c03552792fcff3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5566699083222805323, guid: e84bf6ec95c1c584c9c03552792fcff3, type: 3}
+      propertyPath: m_Name
+      value: Virus_Rot
+      objectReference: {fileID: 0}
+    - target: {fileID: 5771917158663599302, guid: e84bf6ec95c1c584c9c03552792fcff3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6427073626255467249, guid: e84bf6ec95c1c584c9c03552792fcff3, type: 3}
+      propertyPath: initialBehavior
+      value: 
+      objectReference: {fileID: 2454941874638176293}
+    - target: {fileID: 6511283522600474484, guid: e84bf6ec95c1c584c9c03552792fcff3, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d65aa956b7569874fab274083826a77f, type: 3}
+    - target: {fileID: 8274389940529229397, guid: e84bf6ec95c1c584c9c03552792fcff3, type: 3}
+      propertyPath: sprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 9ab320fe5567fa546b0b9c959258ce46, type: 3}
+    - target: {fileID: 8274389940529229397, guid: e84bf6ec95c1c584c9c03552792fcff3, type: 3}
+      propertyPath: sprites.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: db0ff06ff1c465e489d30926236cac52, type: 3}
+    - target: {fileID: 8326897021057542709, guid: e84bf6ec95c1c584c9c03552792fcff3, type: 3}
+      propertyPath: sprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 85b743080622ab845a2234872c4cf59a, type: 3}
+    - target: {fileID: 8326897021057542709, guid: e84bf6ec95c1c584c9c03552792fcff3, type: 3}
+      propertyPath: sprites.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: a79240b96db28e0438a14f927fa7d3da, type: 3}
+    - target: {fileID: 8326897021057542709, guid: e84bf6ec95c1c584c9c03552792fcff3, type: 3}
+      propertyPath: sprites.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: d4389729e9ff89441a8188bc1e5fcd57, type: 3}
+    - target: {fileID: 8326897021057542709, guid: e84bf6ec95c1c584c9c03552792fcff3, type: 3}
+      propertyPath: sprites.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: 40e3994d5e62d8d489097420b3c933b7, type: 3}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e84bf6ec95c1c584c9c03552792fcff3, type: 3}
+--- !u!114 &2454941874638176293 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6247974660858157080, guid: e84bf6ec95c1c584c9c03552792fcff3, type: 3}
+  m_PrefabInstance: {fileID: 8405114904115009597}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d796434b01c635c428d46529c4b6a0cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
