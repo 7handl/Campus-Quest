@@ -13,6 +13,8 @@ public class DialogueTrigger : MonoBehaviour, IDataPersistence
 
     [SerializeField] private string id;
 
+    [SerializeField] private string miniGameName;
+
     [ContextMenu("Generate guid for id")]
     private void GenerateGuid()
     {
@@ -29,8 +31,7 @@ public class DialogueTrigger : MonoBehaviour, IDataPersistence
 
     public void LoadData(GameData data)
     {
-        data.dialogueTriggered.TryGetValue(id, out playerInRange);
-        if(playerInRange )
+        if (data.completedMiniGames.ContainsKey(miniGameName))
         {
             gameObject.SetActive(false);
         }
@@ -38,11 +39,10 @@ public class DialogueTrigger : MonoBehaviour, IDataPersistence
 
     public void SaveData(ref GameData data)
     {
-        if (data.dialogueTriggered.ContainsKey(id))
+        if (!data.completedMiniGames.ContainsKey(miniGameName))
         {
-            data.dialogueTriggered.Remove(id);
+            data.completedMiniGames.Add(miniGameName, true);
         }
-        data.dialogueTriggered.Add(id, playerInRange);
     }
 
     private void Update() 
@@ -56,7 +56,7 @@ public class DialogueTrigger : MonoBehaviour, IDataPersistence
                 IEnumerator waiter()
                 {
                     yield return new WaitForSeconds(0.2f);
-                    DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
+                    DialogueManager.GetInstance().EnterDialogueMode(inkJSON, id, miniGameName);
                 }
                 
             }

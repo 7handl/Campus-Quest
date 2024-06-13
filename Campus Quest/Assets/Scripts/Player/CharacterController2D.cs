@@ -32,7 +32,7 @@ public class CharacterController2D : MonoBehaviour, IDataPersistence
 
     public void LoadData(GameData data)
     {
-        this.transform.position = data.playerPosition;
+        transform.position = data.playerPosition;
     }
 
     public void SaveData(ref GameData data)

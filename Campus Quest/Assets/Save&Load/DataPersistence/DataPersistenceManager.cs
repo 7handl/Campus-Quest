@@ -86,6 +86,7 @@ public class DataPersistenceManager : MonoBehaviour
         {
             dataPersistenceObj.LoadData(gameData);
         }
+
     }
 
     public void SaveGame()
@@ -98,8 +99,12 @@ public class DataPersistenceManager : MonoBehaviour
         
         foreach (IDataPersistence dataPersistenceObj in dataPersistenceObjects)
         {
-            dataPersistenceObj.SaveData(ref gameData);
+           if(dataPersistenceObj != null && ((MonoBehaviour)dataPersistenceObj).gameObject != null)
+            {
+                dataPersistenceObj.SaveData(ref gameData);
+            }       
         }
+
 
         dataHandler.Save(gameData);
     }
@@ -119,5 +124,26 @@ public class DataPersistenceManager : MonoBehaviour
     public bool HasGameData()
     {
         return gameData != null;
+    }
+
+    public GameData GetGameData()
+    {
+        return gameData;
+    }
+
+    public void SetPlayerPosition(Vector3 position)
+    {
+        if (gameData != null)
+        {
+            gameData.playerPosition = position;
+        }
+    }
+
+    public void MarkMiniGameCompleted(string miniGameName)
+    {
+        if (gameData != null)
+        {
+            gameData.MarkMiniGameCompleted(miniGameName);
+        }
     }
 }

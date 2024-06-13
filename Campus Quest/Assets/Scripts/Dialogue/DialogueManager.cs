@@ -6,6 +6,7 @@ using Ink.Runtime;
 using UnityEngine.EventSystems;
 using System.Reflection;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private GameObject[] choices;
     private TextMeshProUGUI[] choicesText;
 
+    private string miniGameName;
   
     private Story currentStory;
     public bool dialogueIsPlaying { get; private set; }
@@ -73,13 +75,20 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    public void EnterDialogueMode(TextAsset inkJSON)
+    public void EnterDialogueMode(TextAsset inkJSON, string npcID, string minigameScene)
     {
 
         currentStory = new Story(inkJSON.text);
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
         ContinueStory();
+
+        miniGameName = minigameScene;
+
+        if (DataPersistenceManager.instance.GetGameData().IsMiniGameCompleted(minigameScene))
+        {
+            StartCoroutine(ExitDialogueMode());
+        }
     }
 
     private IEnumerator ExitDialogueMode()
@@ -89,6 +98,8 @@ public class DialogueManager : MonoBehaviour
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
         dialogueText.text = "";
+
+        SceneManager.LoadScene(miniGameName);
     }
 
     private void ContinueStory()
@@ -160,4 +171,13 @@ public class DialogueManager : MonoBehaviour
         ContinueStory();
     }
 
+    public void ReturnToMainScene()
+    {
+        SceneManager.LoadScene("Dialog");
+    }
+
+    public void RemoveNPC()
+    {
+        DataPersistenceManager.instance.MarkMiniGameCompleted(miniGameName);
+    }
 }
