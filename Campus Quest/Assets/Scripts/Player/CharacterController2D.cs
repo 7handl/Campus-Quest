@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.EventSystems;
 
 // This script is a basic 2D character controller that allows
 // the player to run and jump. It uses Unity's new input system,
@@ -9,6 +10,7 @@
 [RequireComponent(typeof(Rigidbody2D))]
 public class CharacterController2D : MonoBehaviour
 {
+    public Animator animator;
 
     [Header("Movement Params")]
     public float runSpeed = 6.0f;
@@ -21,6 +23,7 @@ public class CharacterController2D : MonoBehaviour
 
     // other
     private bool isGrounded = false;
+    private Vector2 movement;
 
     private void Awake()
     {
@@ -32,6 +35,9 @@ public class CharacterController2D : MonoBehaviour
 
     private void FixedUpdate()
     {
+        GetComponent<Animator>().SetFloat("xVelocity", Mathf.Abs(rb.velocity.x));
+
+
         if (DialogueManager.GetInstance().dialogueIsPlaying)
         {
             return;
@@ -42,6 +48,8 @@ public class CharacterController2D : MonoBehaviour
         HandleHorizontalMovement();
 
         HandleJumping();
+
+       
     }
 
     private void UpdateIsGrounded()
@@ -66,8 +74,17 @@ public class CharacterController2D : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        movement = new Vector2(Input.GetAxis("Horizontal"), 0).normalized;
+        bool flipped = movement.x < 0;
+        this.transform.rotation = Quaternion.Euler(new Vector3(0f, flipped ? 180f : 0f, 0f));
+
+    }
+
     private void HandleHorizontalMovement()
     {
+
         Vector2 moveDirection = InputManager.GetInstance().GetMoveDirection();
         rb.velocity = new Vector2(moveDirection.x * runSpeed, rb.velocity.y);
     }
