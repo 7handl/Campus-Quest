@@ -11,38 +11,26 @@ public class DialogueTrigger : MonoBehaviour, IDataPersistence
     [Header("Ink JSON")]
     [SerializeField] private TextAsset inkJSON;
 
-    [SerializeField] private string id;
 
     [SerializeField] private string miniGameName;
 
-    [ContextMenu("Generate guid for id")]
-    private void GenerateGuid()
-    {
-        id = System.Guid.NewGuid().ToString();
-    }
 
     private bool playerInRange;
 
     private void Awake() 
-    {
+    { 
         playerInRange = false;
         visualCue.SetActive(false);
     }
 
     public void LoadData(GameData data)
     {
-        if (data.completedMiniGames.ContainsKey(miniGameName))
-        {
-            gameObject.SetActive(false);
-        }
+        
     }
 
     public void SaveData(ref GameData data)
     {
-        if (!data.completedMiniGames.ContainsKey(miniGameName))
-        {
-            data.completedMiniGames.Add(miniGameName, true);
-        }
+        
     }
 
     private void Update() 
@@ -56,7 +44,7 @@ public class DialogueTrigger : MonoBehaviour, IDataPersistence
                 IEnumerator waiter()
                 {
                     yield return new WaitForSeconds(0.2f);
-                    DialogueManager.GetInstance().EnterDialogueMode(inkJSON, id, miniGameName);
+                    DialogueManager.GetInstance().EnterDialogueMode(inkJSON, miniGameName);
                 }
                 
             }

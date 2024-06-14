@@ -28,11 +28,12 @@ public class CharacterController2D : MonoBehaviour, IDataPersistence
         rb = GetComponent<Rigidbody2D>();
 
         rb.gravityScale = gravityScale;
+
     }
 
     public void LoadData(GameData data)
     {
-        transform.position = data.playerPosition;
+        this.transform.position = data.playerPosition;
     }
 
     public void SaveData(ref GameData data)

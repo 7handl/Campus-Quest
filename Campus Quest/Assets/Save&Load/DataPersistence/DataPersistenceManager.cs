@@ -26,12 +26,11 @@ public class DataPersistenceManager : MonoBehaviour
     {
         if(instance != null)
         {
-            Debug.LogError("Found more than one Data Persistence Manager in the scene. Destroying the newest one.");
-
             Destroy(this.gameObject);
 
             return;
         }
+
         instance = this;
 
         DontDestroyOnLoad(this.gameObject);
@@ -99,14 +98,10 @@ public class DataPersistenceManager : MonoBehaviour
         
         foreach (IDataPersistence dataPersistenceObj in dataPersistenceObjects)
         {
-           if(dataPersistenceObj != null && ((MonoBehaviour)dataPersistenceObj).gameObject != null)
-            {
-                dataPersistenceObj.SaveData(ref gameData);
-            }       
+            dataPersistenceObj.SaveData( ref gameData);      
         }
-
-
         dataHandler.Save(gameData);
+
     }
 
     private void OnApplicationQuit()
@@ -126,24 +121,4 @@ public class DataPersistenceManager : MonoBehaviour
         return gameData != null;
     }
 
-    public GameData GetGameData()
-    {
-        return gameData;
-    }
-
-    public void SetPlayerPosition(Vector3 position)
-    {
-        if (gameData != null)
-        {
-            gameData.playerPosition = position;
-        }
-    }
-
-    public void MarkMiniGameCompleted(string miniGameName)
-    {
-        if (gameData != null)
-        {
-            gameData.MarkMiniGameCompleted(miniGameName);
-        }
-    }
 }

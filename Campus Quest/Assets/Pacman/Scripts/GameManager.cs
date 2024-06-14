@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public bool miniGameDone  = false;
+    private bool miniGameCompleted = false;
     
     public Virus[] virus;
 
@@ -38,19 +38,14 @@ public class GameManager : MonoBehaviour
 
     private void NewRound()
     {
-       if (!miniGameDone)
-        {
+       
             foreach (Transform molekuel in this.molekuel)
             {
                 molekuel.gameObject.SetActive(true);
             }
 
             ResetState();
-        }
-        else
-        {
-            ReturnToMainScene();
-        }
+        
      
     }
 
@@ -108,6 +103,8 @@ public class GameManager : MonoBehaviour
         {
             this.zelle.gameObject.SetActive(false);
 
+            miniGameCompleted = true;
+
             Invoke(nameof(ReturnToMainScene), 3.0f);
         }
     }
@@ -140,11 +137,13 @@ public class GameManager : MonoBehaviour
 
     private void ReturnToMainScene()
     {
+        if (miniGameCompleted == true)
+        {
+            DataPersistenceManager.instance.SaveGame();
+        }
+        
         SceneManager.LoadScene(mainSceneName);
+
     }
 
-    public void MiniGameDone()
-    {
-        miniGameDone = true;
-    }
 }

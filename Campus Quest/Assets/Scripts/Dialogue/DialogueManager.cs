@@ -19,8 +19,8 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private GameObject[] choices;
     private TextMeshProUGUI[] choicesText;
 
-    private string miniGameName;
-  
+    private string miniGameSceneName;
+
     private Story currentStory;
     public bool dialogueIsPlaying { get; private set; }
 
@@ -75,7 +75,7 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    public void EnterDialogueMode(TextAsset inkJSON, string npcID, string minigameScene)
+    public void EnterDialogueMode(TextAsset inkJSON, string miniGameScene)
     {
 
         currentStory = new Story(inkJSON.text);
@@ -83,12 +83,8 @@ public class DialogueManager : MonoBehaviour
         dialoguePanel.SetActive(true);
         ContinueStory();
 
-        miniGameName = minigameScene;
+        miniGameSceneName = miniGameScene;
 
-        if (DataPersistenceManager.instance.GetGameData().IsMiniGameCompleted(minigameScene))
-        {
-            StartCoroutine(ExitDialogueMode());
-        }
     }
 
     private IEnumerator ExitDialogueMode()
@@ -99,7 +95,7 @@ public class DialogueManager : MonoBehaviour
         dialoguePanel.SetActive(false);
         dialogueText.text = "";
 
-        SceneManager.LoadScene(miniGameName);
+        SceneManager.LoadScene(miniGameSceneName);
     }
 
     private void ContinueStory()
@@ -176,8 +172,4 @@ public class DialogueManager : MonoBehaviour
         SceneManager.LoadScene("Dialog");
     }
 
-    public void RemoveNPC()
-    {
-        DataPersistenceManager.instance.MarkMiniGameCompleted(miniGameName);
-    }
 }
