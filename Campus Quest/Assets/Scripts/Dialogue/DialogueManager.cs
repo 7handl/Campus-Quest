@@ -6,6 +6,7 @@ using Ink.Runtime;
 using UnityEngine.EventSystems;
 using System.Reflection;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -18,7 +19,8 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private GameObject[] choices;
     private TextMeshProUGUI[] choicesText;
 
-  
+    private string miniGameSceneName;
+
     private Story currentStory;
     public bool dialogueIsPlaying { get; private set; }
 
@@ -73,13 +75,16 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    public void EnterDialogueMode(TextAsset inkJSON)
+    public void EnterDialogueMode(TextAsset inkJSON, string miniGameScene)
     {
 
         currentStory = new Story(inkJSON.text);
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
         ContinueStory();
+
+        miniGameSceneName = miniGameScene;
+
     }
 
     private IEnumerator ExitDialogueMode()
@@ -89,6 +94,8 @@ public class DialogueManager : MonoBehaviour
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
         dialogueText.text = "";
+
+        SceneManager.LoadScene(miniGameSceneName);
     }
 
     private void ContinueStory()
@@ -158,6 +165,11 @@ public class DialogueManager : MonoBehaviour
         // NOTE: The below two lines were added to fix a bug after the Youtube video was made
         InputManager.GetInstance().RegisterSubmitPressed(); // this is specific to my InputManager script
         ContinueStory();
+    }
+
+    public void ReturnToMainScene()
+    {
+        SceneManager.LoadScene("Dialog");
     }
 
 }
