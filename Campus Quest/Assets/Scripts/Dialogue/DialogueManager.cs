@@ -7,6 +7,7 @@ using UnityEngine.EventSystems;
 using System.Reflection;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using System.Linq;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -135,7 +136,8 @@ public class DialogueManager : MonoBehaviour
         foreach (Choice choice in currentChoices)
         {
             choices[index].gameObject.SetActive(true);
-            choicesText[index].text = choice.text;
+            string currentText = choice.text;
+            choicesText[index].text = currentText;            
             index++;
         }
         // go through the remaining choices the UI supports and make sure they're hidden
