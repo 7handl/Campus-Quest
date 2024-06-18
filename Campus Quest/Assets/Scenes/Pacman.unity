@@ -2901,63 +2901,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!1001 &463125317
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3182694220673342072, guid: 1f2afaf7af6a2134482a8c6390833f44, type: 3}
-      propertyPath: m_Name
-      value: DataPersistenceManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 6470364208661927969, guid: 1f2afaf7af6a2134482a8c6390833f44, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6470364208661927969, guid: 1f2afaf7af6a2134482a8c6390833f44, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6470364208661927969, guid: 1f2afaf7af6a2134482a8c6390833f44, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6470364208661927969, guid: 1f2afaf7af6a2134482a8c6390833f44, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6470364208661927969, guid: 1f2afaf7af6a2134482a8c6390833f44, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6470364208661927969, guid: 1f2afaf7af6a2134482a8c6390833f44, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6470364208661927969, guid: 1f2afaf7af6a2134482a8c6390833f44, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6470364208661927969, guid: 1f2afaf7af6a2134482a8c6390833f44, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6470364208661927969, guid: 1f2afaf7af6a2134482a8c6390833f44, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6470364208661927969, guid: 1f2afaf7af6a2134482a8c6390833f44, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 1f2afaf7af6a2134482a8c6390833f44, type: 3}
 --- !u!1 &496593515
 GameObject:
   m_ObjectHideFlags: 0
@@ -3079,7 +3022,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 604d2e5bd4c3906488576224e2222314, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  miniGameDone: 0
   virus:
   - {fileID: 95013660}
   - {fileID: 111148701}
@@ -3087,7 +3029,6 @@ MonoBehaviour:
   - {fileID: 1973573327}
   zelle: {fileID: 642378959}
   molekuel: {fileID: 253673694}
-  mainSceneName: Dialog
 --- !u!4 &583655314
 Transform:
   m_ObjectHideFlags: 0
@@ -10504,7 +10445,6 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 583655314}
-  - {fileID: 463125317}
   - {fileID: 496593518}
   - {fileID: 1021434087}
   - {fileID: 642378963}

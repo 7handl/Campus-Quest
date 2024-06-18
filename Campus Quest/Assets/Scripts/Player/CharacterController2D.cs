@@ -8,7 +8,7 @@ using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(BoxCollider2D))]
 [RequireComponent(typeof(Rigidbody2D))]
-public class CharacterController2D : MonoBehaviour, IDataPersistence
+public class CharacterController2D : MonoBehaviour
 {
     public Animator animator;
 
@@ -31,17 +31,6 @@ public class CharacterController2D : MonoBehaviour, IDataPersistence
         rb = GetComponent<Rigidbody2D>();
 
         rb.gravityScale = gravityScale;
-
-    }
-
-    public void LoadData(GameData data)
-    {
-        this.transform.position = data.playerPosition;
-    }
-
-    public void SaveData(ref GameData data)
-    {
-        data.playerPosition = this.transform.position;
     }
 
     private void FixedUpdate()
