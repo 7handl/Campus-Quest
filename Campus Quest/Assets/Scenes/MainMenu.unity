@@ -482,6 +482,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 49589806}
   m_CullTransparentMesh: 1
+<<<<<<< HEAD
 --- !u!1 &235343336
 GameObject:
   m_ObjectHideFlags: 0
@@ -531,6 +532,8 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> 10d26a0f9c20f317924271645d0723d44aa84a44
 --- !u!1 &324791591
 GameObject:
   m_ObjectHideFlags: 0
@@ -1073,7 +1076,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cacd82a149de9a24bb79634acc95949d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   LevelName: 
+=======
+  newGameButton: {fileID: 943864659}
+  continueGameButton: {fileID: 1672783597}
+>>>>>>> 10d26a0f9c20f317924271645d0723d44aa84a44
 --- !u!1 &966567769
 GameObject:
   m_ObjectHideFlags: 0
@@ -2287,7 +2295,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cacd82a149de9a24bb79634acc95949d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   LevelName: 
+=======
+  newGameButton: {fileID: 943864659}
+  continueGameButton: {fileID: 1672783597}
+>>>>>>> 10d26a0f9c20f317924271645d0723d44aa84a44
 --- !u!1 &1916503081
 GameObject:
   m_ObjectHideFlags: 0

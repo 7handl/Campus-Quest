@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class DialogueTrigger : MonoBehaviour
+public class DialogueTrigger : MonoBehaviour, IDataPersistence
 {
     [Header("Visual Cue")]
     [SerializeField] private GameObject visualCue;
@@ -11,12 +11,26 @@ public class DialogueTrigger : MonoBehaviour
     [Header("Ink JSON")]
     [SerializeField] private TextAsset inkJSON;
 
+
+    [SerializeField] private string miniGameName;
+
+
     private bool playerInRange;
 
     private void Awake() 
-    {
+    { 
         playerInRange = false;
         visualCue.SetActive(false);
+    }
+
+    public void LoadData(GameData data)
+    {
+        
+    }
+
+    public void SaveData(ref GameData data)
+    {
+        
     }
 
     private void Update() 
@@ -30,7 +44,7 @@ public class DialogueTrigger : MonoBehaviour
                 IEnumerator waiter()
                 {
                     yield return new WaitForSeconds(0.2f);
-                    DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
+                    DialogueManager.GetInstance().EnterDialogueMode(inkJSON, miniGameName);
                 }
                 
             }
