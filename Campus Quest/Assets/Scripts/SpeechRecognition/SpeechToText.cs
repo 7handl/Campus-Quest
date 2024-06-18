@@ -7,7 +7,6 @@ using System.Reflection;
 using UnityEngine.InputSystem;
 using HuggingFace.API;
 using System.IO;
-using System;
 
 
 public class SpeechToText : MonoBehaviour
@@ -17,16 +16,6 @@ public class SpeechToText : MonoBehaviour
     [SerializeField] private TextMeshProUGUI sttText;
     [SerializeField] private InputActionReference actionToDisable;
 
-    [Header("Sentence Similarity Input")]
-    [SerializeField] private TextMeshProUGUI InputSentence;
-    [SerializeField] private TextMeshProUGUI Comp0;
-    [SerializeField] private TextMeshProUGUI Comp1;
-    [SerializeField] private TextMeshProUGUI Comp2;
-
-    [Header("Robot Brain")]
-    public SentenceSimilarity jammoBrain;
-
-
 
     public bool IsRecording { get; private set; }
     public bool sttActive { get; private set; }
@@ -34,9 +23,6 @@ public class SpeechToText : MonoBehaviour
     private AudioClip clip;
     private byte[] bytes;
     string outputText = "";
-
-    private List<string> CompSentences;
-    private string[] sentencesArray = new string[3];
 
 
 
@@ -70,10 +56,6 @@ public class SpeechToText : MonoBehaviour
         if (!sttActive)
         { return; }
 
-        sentencesArray[0] = Comp0.text;
-        sentencesArray[1] = Comp1.text;
-        sentencesArray[2] = Comp2.text;
-
         if (sttActive)
         {
             if (IsRecording && Microphone.GetPosition(null) >= clip.samples)
@@ -88,6 +70,7 @@ public class SpeechToText : MonoBehaviour
                 }
                 else { StartSTT(); }
             }
+
 
         }
     }
@@ -111,12 +94,12 @@ public class SpeechToText : MonoBehaviour
         IsRecording = true;
         sttText.text = "Es wird aufgenommen...";
         DisableAction();
-
+        
     }
 
     private void StopSTT()
     {
-
+        
         var position = Microphone.GetPosition(null);
         Microphone.End(null);
         var samples = new float[position * clip.channels];
@@ -126,16 +109,12 @@ public class SpeechToText : MonoBehaviour
         HuggingFaceAPI.AutomaticSpeechRecognition(bytes, response => {
             outputText = response;
             sttText.text = outputText;
-            StartSimilarity(outputText);
         }, error => {
             outputText = error;
             sttText.text = outputText;
         });
         Debug.Log("Stopped, outputText:" + outputText);
-
-
-
-
+        
         EnableAction();
     }
 
@@ -181,29 +160,4 @@ public class SpeechToText : MonoBehaviour
         }
     }
 
-    public void SetComp(int index, string Sentence)
-    {
-        CompSentences[index] = Sentence;
-    }
-
-    public void StartSimilarity(string prompt)
-    {
-        Tuple<int, float> tuple_ = jammoBrain.RankSimilarityScores(prompt, sentencesArray);
-        Utility(tuple_.Item2, tuple_.Item1);
-    }
-
-    public void Utility(float maxScore, int maxScoreIndex)
-    {
-        // First we check that the score is > of 0.2, otherwise we let our agent perplexed;
-        // This way we can handle strange input text (for instance if we write "Go see the dog!" the agent will be puzzled).
-        if (maxScore < 0.20f)
-        {
-            sttText.text = "Keine Übereinstimmung";
-        }
-        else
-        {
-            DialogueManager.GetInstance().MakeChoice(maxScoreIndex);
-
-        }
-    }
 }

@@ -1259,7 +1259,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1127336857}
   - component: {fileID: 1127336858}
-  - component: {fileID: 1127336859}
   m_Layer: 0
   m_Name: SpeechToText
   m_TagString: Untagged
@@ -1297,24 +1296,6 @@ MonoBehaviour:
   sttField: {fileID: 1431916133}
   sttText: {fileID: 1860810577}
   actionToDisable: {fileID: 7023726599725230892, guid: 25dc103709ab553458e2d32cdd4d12dd, type: 3}
-  InputSentence: {fileID: 1860810577}
-  Comp0: {fileID: 692236093}
-  Comp1: {fileID: 1847571522}
-  Comp2: {fileID: 1579649531}
-  jammoBrain: {fileID: 1127336859}
---- !u!114 &1127336859
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1127336856}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c8fe149d64afb3418c5ce2a36a3bf61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  modelAsset: {fileID: 5022602860645237092, guid: 76c4490411fc273438296377327ef22b, type: 3}
 --- !u!1 &1201995330
 GameObject:
   m_ObjectHideFlags: 0
