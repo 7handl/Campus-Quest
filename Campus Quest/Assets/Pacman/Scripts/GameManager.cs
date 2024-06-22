@@ -1,11 +1,12 @@
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+using System.Collections;
+
 
 public class GameManager : MonoBehaviour
 {
-    public bool completed = false;
-
-    public int minigameIndex;
 
     public Virus[] virus;
 
@@ -13,11 +14,13 @@ public class GameManager : MonoBehaviour
 
     public Transform molekuel;
 
-    public int virusMultiplier { get; private set; } = 1;
-
     public int score { get; private set; }
 
-    public int leben { get; private set; }
+    public int leben {  get; private set; }
+
+    public TextMeshProUGUI lebenText;
+
+    public TextMeshProUGUI scoreText;
 
 
     private void Start()
@@ -27,15 +30,15 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (this.leben <= 0 && Input.anyKeyDown)
+        if (this.leben <= 0)
         {
-            NewGame();
+            Invoke(nameof(NewGame), 2.0f);
         }
     }
 
     private void NewGame()
     {
-        SetScore(0);
+        SetScore(244);
         SetLeben(3);
         NewRound();
     }
@@ -52,7 +55,6 @@ public class GameManager : MonoBehaviour
 
     private void ResetState()
     {
-        ResetVirusMultiplier();
 
         for (int i = 0; i < this.virus.Length; i++)
         {
@@ -75,19 +77,18 @@ public class GameManager : MonoBehaviour
     private void SetScore(int score)
     {
         this.score = score;
+        scoreText.text = score.ToString();
     }
 
     private void SetLeben(int leben)
     {
         this.leben = leben;
+        lebenText.text = leben.ToString();
     }
 
     public void VirusGegessen(Virus virus)
     {
-        int points = virus.points * this.virusMultiplier;
-        SetScore(this.score + points);
-
-        this.virusMultiplier++;
+       
     }
 
     public void ZelleGegessen()
@@ -109,12 +110,11 @@ public class GameManager : MonoBehaviour
     {
         molekuel.gameObject.SetActive(false);
 
-        SetScore(this.score + molekuel.points);
+        SetScore(this.score-1);
 
         if (!RemainingMolekuele())
         {
             this.zelle.gameObject.SetActive(false);
-            completed = true;
             SceneManager.LoadSceneAsync("Dialog");
         }
     }
@@ -130,7 +130,7 @@ public class GameManager : MonoBehaviour
 
         CancelInvoke();
 
-        Invoke(nameof(ResetVirusMultiplier), molekuel.dauer);
+        
     }
 
     private bool RemainingMolekuele()
@@ -146,8 +146,4 @@ public class GameManager : MonoBehaviour
         return false;
     }
 
-    private void ResetVirusMultiplier()
-    {
-        this.virusMultiplier = 1;
-    }
 }
