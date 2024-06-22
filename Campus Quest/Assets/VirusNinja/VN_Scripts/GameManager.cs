@@ -2,6 +2,7 @@ using UnityEngine.UI;
 using System.Collections;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class VNGameManager : MonoBehaviour
 {
@@ -58,6 +59,7 @@ public class VNGameManager : MonoBehaviour
     {
         score++;
         scoreText.text = score.ToString();
+        MiniGameCompleted();
     }
     public void Explode()
     {
@@ -97,6 +99,14 @@ public class VNGameManager : MonoBehaviour
             elapsed += Time.unscaledDeltaTime;
 
             yield return null;
+        }
+    }
+
+    public void MiniGameCompleted()
+    {
+        if(score == 100)
+        {
+            SceneManager.LoadSceneAsync("Dialog");
         }
     }
 }
