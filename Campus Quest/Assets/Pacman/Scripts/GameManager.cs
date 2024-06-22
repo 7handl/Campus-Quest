@@ -1,9 +1,12 @@
-
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    
+    public bool completed = false;
+
+    public int minigameIndex;
+
     public Virus[] virus;
 
     public Zelle zelle;
@@ -111,7 +114,8 @@ public class GameManager : MonoBehaviour
         if (!RemainingMolekuele())
         {
             this.zelle.gameObject.SetActive(false);
-            Invoke(nameof(NewRound), 3.0f);
+            completed = true;
+            SceneManager.LoadSceneAsync("Dialog");
         }
     }
 

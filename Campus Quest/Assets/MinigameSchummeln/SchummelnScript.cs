@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class SchummelnScript : MonoBehaviour
@@ -19,8 +22,14 @@ public class SchummelnScript : MonoBehaviour
     public KeyCode keyToPress = KeyCode.Space;
     private bool inGame;
     private bool inLostCutscene = false;
+    private bool inWonCutscene = false;
     private bool ignoreInput = false;
+    private bool waitForReturn = false;
     public ProgressBar progressBar;
+
+    public SpriteRenderer teacherVisual;
+    public Sprite teacherFront;
+    public Sprite teacherBack;
 
 
     private int deathCnt = 0;
@@ -49,6 +58,8 @@ public class SchummelnScript : MonoBehaviour
     {
         if (!isGameActive) return;
 
+        UpdateTeacherVisual();
+
         if (inGame && timeRemaining <= 0)
         {
             StartCoroutine(GameLost("Die Prüfungszeit ist abgelaufen!"));
@@ -59,8 +70,19 @@ public class SchummelnScript : MonoBehaviour
             EndSequence();
         }
 
+        if (winPressCnt == pressCnt&&!inWonCutscene)
+        {
+            inWonCutscene = true;
+            StartCoroutine(GameWon());
+        }
+
         if (!inGame && !ignoreInput && Input.GetKeyDown(keyToPress))
         {
+            if (waitForReturn)
+            {
+                Debug.Log("Return");
+                SceneManager.LoadScene("Dialog");
+            }
             if (inLostCutscene)
             {
                 StartCoroutine(RestartGame());
@@ -101,6 +123,24 @@ public class SchummelnScript : MonoBehaviour
 
     }
 
+    public void UpdateTeacherVisual()
+    {
+        
+
+        if (teacherVisual != null)
+        {
+
+            if (teacherState || !inGame)
+            {
+                teacherVisual.sprite = teacherFront;
+            }
+            else 
+            {
+                teacherVisual.sprite = teacherBack;           }
+
+            
+        }
+    }
 
 
     private IEnumerator StartMinigameSchummeln()
@@ -151,12 +191,20 @@ public class SchummelnScript : MonoBehaviour
         teacherState = false;
         infoText.text = "Drücke Leertaste um das Minigame erneut zu versuchen";
         yield return new WaitForSeconds(4f);
+        teacherState = false;
         inLostCutscene = false;
 
     }
-    private void GameWon()
+    private IEnumerator GameWon()
     {
+        inGame = false;
+        yield return new WaitForSeconds(2f);
+        infoText.text = "Du hast die Prüfung bestanden";
+        yield return new WaitForSeconds(4f);
+        infoText.text = "Drücke Leertaste um in die Schule zurückzukehren";
+        waitForReturn = true;
 
+        
     }
     private void EndSequence()
     {
