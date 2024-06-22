@@ -1,5 +1,10 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
+using System.IO;
+using System.Linq;
+using System.Collections;
+using System.Collections.Generic;
 
 // This script is a basic 2D character controller that allows
 // the player to run and jump. It uses Unity's new input system,
@@ -8,7 +13,7 @@ using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(BoxCollider2D))]
 [RequireComponent(typeof(Rigidbody2D))]
-public class CharacterController2D : MonoBehaviour
+public class CharacterController2D : MonoBehaviour, IDataPersistence
 {
     public Animator animator;
 
@@ -31,6 +36,16 @@ public class CharacterController2D : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
 
         rb.gravityScale = gravityScale;
+    }
+
+    public void LoadData(GameData data)
+    {
+        this.transform.position = data.playerPosition;
+    }
+
+    public void SaveData(ref GameData data)
+    {
+        data.playerPosition = this.transform.position;
     }
 
     private void FixedUpdate()
@@ -73,6 +88,7 @@ public class CharacterController2D : MonoBehaviour
             }
         }
     }
+
 
     private void Update()
     {
