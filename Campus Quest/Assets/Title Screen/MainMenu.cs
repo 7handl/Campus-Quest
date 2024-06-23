@@ -24,14 +24,14 @@ public class StartGame : MonoBehaviour
 
         DataPersistenceManager.instance.NewGame();
 
-        SceneManager.LoadSceneAsync("Dialog");
+        SceneManager.LoadSceneAsync("Trainstation");
     }
 
     public void OnContinueGameClicked()
     {
         DisableMenuButtons();
 
-        SceneManager.LoadSceneAsync("Dialog");
+        SceneManager.LoadSceneAsync("Trainstation");
     }
 
     private void DisableMenuButtons()
