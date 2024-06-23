@@ -35,8 +35,10 @@ public class SpeechToText : MonoBehaviour
     private byte[] bytes;
     string outputText = "";
 
-    private List<string> CompSentences;
     private string[] sentencesArray = new string[3];
+    [HideInInspector]
+    public float maxScore;
+    public int maxScoreIndex;
 
 
 
@@ -181,10 +183,7 @@ public class SpeechToText : MonoBehaviour
         }
     }
 
-    public void SetComp(int index, string Sentence)
-    {
-        CompSentences[index] = Sentence;
-    }
+
 
     public void StartSimilarity(string prompt)
     {
