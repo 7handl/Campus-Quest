@@ -7,7 +7,7 @@ Geh einfach weiter nach rechts. Viel glück!
 -> END
 * [Nein gerade nicht]
 In Ordnung, bereite dich erstmal vor.
--> main
+-> END
 * [Challenges?]
 Das wirst du noch früh genug erfahren. Hahaha.
 -> main
