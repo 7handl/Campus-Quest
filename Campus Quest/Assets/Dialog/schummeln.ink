@@ -1,56 +1,57 @@
 -> main
 
 === main ===
-Ich bin der mysteriöse Dr.XXXXX!
-Bist du bereit dich meiner Prüfung zu stellen?
+I am the mysterious Dr. XXXXX!
+Are you ready to take my test?
 
 
-    *[Ja!]
-        Niemand ist bereit für meine Prüfung!
-    -> FrageSchummeln
+    *[Yes!]
+        Nobody is ready for my exam!
+    -> QuestionCheat
     
-    *[Nein.]
-        Das ist die richtige Einstellung!
-    -> FrageSchummeln
+    *[No.]
+        That's the right attitude!
+    -> QuestionCheat
     
     
-=== FrageSchummeln ===
-Meine Prüfung ist anders als Alle, die du gewohnt bist.
-    * [Aber warum?]
-        Hör zu, ich werde es dir erklären.
-        -> erklaerung
+=== QuestionCheat ===
+My exam is different from the ones you're used to.
+    *[But why?]
+        Listen, I'll explain it to you.
+        -> explanation
         
-    * [Ich werde trotzdem bestehen!]
-        Bist du dir da sicher?
-        -> erklaerung
+    * [I will still pass!]
+        Are you sure about that?
+        -> explanation
         
-    * [Ich bin verwirrt.]
-        Das bin ich auch!
-        ->FrageSchummeln
+    * [I'm confused.]
+        I am too!
+        ->QuestionCheat
         
 
-=== erklaerung ===
-Die Regeln meiner Prüfung befinden sich in einem stetigen Wandel.
-*[Was bedeutet das?]
-    Das sie sich auch einfach während der Prüfung ändern können.
-    ->letzteChoice
+=== explanation ===
+The rules of my exam are in a constant state of flux.
+*[What does that mean?]
+    That they can easily change during the exam.
+    ->lastChoice
     
-    === letzteChoice ===
-    Du hast keine Chance meine Regeln zu umgehen!
+    === lastChoice ===
+    You have no chance to circumvent my rules!
     
-        *[Ich werde es trotzdem versuchen!]
-            Es wird dir nicht gelingen!
+        *[I'll try anyway!]
+            You won't succeed!
             -> END
             
-        *[Ich werde fair bestehen!]
-            Falsche Antwort!
-            ->erklaerung
+        *[I will pass fairly!]
+            Wrong answer!
+            ->explanation
             
-        *[Das verstehe ich nicht.]
-            Ich auch nicht.
-            ->erklaerung
+        *[I don't understand that.]
+            Neither do I.
+            ->explanation
             
     
         
         
+
 
