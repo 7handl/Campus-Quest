@@ -1,19 +1,18 @@
 -> main
 
 == main ==
-Hey, wie kann ich dir helfen?
-* [Wo bin ich?]
-Du befindest dich am Bahnhof Traisengasse. Wunderschön hier!
+Hey, how can I help you?
+* [Where am I?]
+You are at the trainstation Traisengasse. Its beautiful here!
 -> main
-* [Hab mich verlaufen.]
-Haha das sieht man dir an, wo willst du denn hin?
+* [I got lost.]
+Haha I can see that, where do you want to go?
 -> main
-* [Wohin soll ich gehen?]
-Du siehst wie ein Student aus. Versuche dein Glück doch am Technikum Wien. Geh einfach weiter nach rechts.
+* [Where should I go?]
+You look like a student. Try your luck at the Technikum Wien. Just keep going to the right.
 -> END
 * ->
-Diese Unterhaltung ist beendet
-
+This conversation is over.
 -> END
 
 

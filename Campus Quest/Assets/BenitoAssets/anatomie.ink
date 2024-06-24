@@ -1,19 +1,18 @@
 -> main
 
 == main ==
-Hallo, ich bin die Anatomie Lehrerin. Möchtest du dein Können in meinem Spiel unter Beweis stellen?
-* [Ja natürlich.]
-Wir spielen VirusNinja. Erwische 100 Viren, doch pass auf die Antikörper auf. Du schaffst das!
+Hello, I am the anatomy teacher. Would you like to show off your skills in my game?
+* [Yes, of course.]
+We will play VirusNinja. Catch 100 viruses but watch out for the antibodies. You got this!
 -> END
-* [Nein gerade nicht.]
-Verstehe, sieh dich ruhig erstmal um.
+* [Not right now.]
+I understand, take a look around first.
 -> END
-* [Ich hasse Anatomie.]
-Das ist schade. Dennoch viel Erfolg!
+* [I don't like anatomy.]
+What a pity. Nevertheless, good luck!
 -> END
 * ->
-Diese Unterhaltung ist beendet
-
+This conversation is over.
 -> END
 
 
