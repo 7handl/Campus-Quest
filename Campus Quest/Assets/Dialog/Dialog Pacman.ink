@@ -5,7 +5,7 @@ Which element has the chemical symbol 'O'?
 
     *[Oxygen]
     Very well done, I think you are ready for the exam.
-    It's about collecting all DNA molecules with a cell.
+    It's about collecting all DNA molecules with a human cell.
     You have 3 lives, if you lose them all, the game restarts.
     Watch out for the viruses, they want to eat you!
     If you swallow one of the medications, they will become vulnerable, and you can attack them!
@@ -13,21 +13,12 @@ Which element has the chemical symbol 'O'?
     ** [Yes]
     Very good. Get ready, it starts soon.
     ->DONE
-    ** [Of course]
-    Very good. Get ready, it starts soon.
+    ** [No]
+    Well, come back later then.
     -> DONE
 
     *[Sodium]
     That is unfortunately wrong!
-    Hopefully, you will do better in the exam.
-    It's about collecting all DNA molecules with a cell.
-    You have 3 lives, if you lose them all, the game restarts.
-    Watch out for the viruses, they want to eat you!
-    If you swallow one of the medications, they will become vulnerable, and you can attack them!
-    Is everything clear and are you ready for the exam?
-    ** [Yes]
-    Very good. Get ready, it starts soon.
-    ->DONE
-    ** [Of course]
-    Very good. Get ready, it starts soon.
+    I think you are not ready for the exam yet.
+    Come back later and try again.
     -> DONE

@@ -25,6 +25,7 @@ public class DialogueManager : MonoBehaviour
     public bool dialogueIsPlaying { get; private set; }
 
     private string miniGameSceneName;
+    private string selectedChoiceText;
 
     private static DialogueManager instance;
 
@@ -95,7 +96,11 @@ public class DialogueManager : MonoBehaviour
         dialoguePanel.SetActive(false);
         dialogueText.text = "";
 
-        SceneManager.LoadScene(miniGameSceneName);
+        if (ShouldLoadScene(selectedChoiceText))
+        {
+            SceneManager.LoadScene(miniGameSceneName);
+        }
+        
     }
 
     private void ContinueStory()
@@ -161,6 +166,8 @@ public class DialogueManager : MonoBehaviour
 
     public void MakeChoice(int choiceIndex)
     {
+        selectedChoiceText = currentStory.currentChoices[choiceIndex].text;
+        
         currentStory.ChooseChoiceIndex(choiceIndex);
         // NOTE: The below two lines were added to fix a bug after the Youtube video was made
         InputManager.GetInstance().RegisterSubmitPressed(); // this is specific to my InputManager script
@@ -170,6 +177,11 @@ public class DialogueManager : MonoBehaviour
     public void ReturnToMainScene()
     {
         SceneManager.LoadScene("Dialog");
+    }
+
+    private bool ShouldLoadScene(string choiceText)
+    {
+        return choiceText == "Yes" || choiceText == "Yes, of course." || choiceText == "Ich werde es trotzdem versuchen.";
     }
 
 }
