@@ -267,7 +267,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed60aa3233995d84db0e1d7cc3f3db6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPosition: {x: -7, y: -0.5, z: 0}
+  playerPosition: {x: -7, y: -3.5, z: 0}
   player: {fileID: 1291657971}
 --- !u!4 &216835695
 Transform:
