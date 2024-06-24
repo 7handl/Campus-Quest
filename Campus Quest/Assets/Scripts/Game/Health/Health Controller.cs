@@ -19,6 +19,9 @@ public class HealthController : MonoBehaviour
     private Rigidbody2D rb2d; // Referenz zum Rigidbody2D des Spielers
     private Collider2D col2d; // Referenz zum Collider2D des Spielers
 
+    [SerializeField]
+    private GameOverManager gameOverManager; // Referenz zum GameOverManager
+
     public float RemainingHealthPercentage
     {
         get
@@ -116,6 +119,11 @@ public class HealthController : MonoBehaviour
         }
 
         OnDied.Invoke();
+
+        if (gameOverManager != null)
+        {
+            gameOverManager.ShowGameOverScreen();
+        }
     }
 
     private void UpdateHealthUI()
@@ -126,3 +134,4 @@ public class HealthController : MonoBehaviour
         }
     }
 }
+

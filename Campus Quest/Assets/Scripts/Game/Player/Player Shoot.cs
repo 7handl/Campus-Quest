@@ -12,7 +12,7 @@ public class PlayerShoot : MonoBehaviour
     [SerializeField]
     private Transform _gunOffset;
     [SerializeField]
-    private float timeBetweenShots;
+    private float timeBetweenShots = 0.5f; // Zeit zwischen Schüssen, um Dauerfeuer zu verhindern
     private bool isFiring;
     private float lastFireTime;
     private Camera mainCamera;
@@ -71,11 +71,13 @@ public class PlayerShoot : MonoBehaviour
         isFiring = inputValue.isPressed;
         if (isFiring)
         {
+            // Schieße sofort und setze den letzten Schusszeitpunkt
             FireBullet();
             lastFireTime = Time.time;
         }
     }
 }
+
 
 
 
