@@ -13,7 +13,7 @@ public class GameData
 
     public GameData()
     {
-        playerPosition = new Vector3(0, 0, 0);
+        playerPosition = new Vector3(0, -3, 0);
 
         miniGameCompleted = new SerializableDictionary<string, bool>();
     }

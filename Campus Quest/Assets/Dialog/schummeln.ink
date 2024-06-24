@@ -44,11 +44,11 @@ The rules of my exam are in a constant state of flux.
             
         *[I will pass fairly!]
             Wrong answer!
-            ->explanation
+            ->lastChoice
             
         *[I don't understand that.]
             Neither do I.
-            ->explanation
+            ->lastChoice
             
     
         
