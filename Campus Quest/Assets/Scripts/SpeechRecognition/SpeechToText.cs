@@ -108,6 +108,11 @@ public class SpeechToText : MonoBehaviour
 
     private void StartSTT()
     {
+        if (Microphone.devices.Length == 0)
+        {
+            sttText.text = "Kein Mikrophon erkannt";
+            return;
+        }
         clip = Microphone.Start(null, false, 10, 44100);
         Debug.Log("Started");
         IsRecording = true;
