@@ -85,6 +85,9 @@ MonoBehaviour:
   leftSprite: {fileID: 1005955925, guid: 78fbf0d18464518489d04985d8aa30dc, type: 3}
   rightSprite: {fileID: -2095487735, guid: 78fbf0d18464518489d04985d8aa30dc, type: 3}
   deathSprite: {fileID: 1932443853, guid: c9012204d52973443bd488d7f0779c37, type: 3}
+  OnEnemyDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &4230910884737722359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,8 +139,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 294161181
-  m_SortingLayer: 5
+  m_SortingLayerID: -2107222095
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 1364349301, guid: 78fbf0d18464518489d04985d8aa30dc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
