@@ -181,7 +181,7 @@ public class DialogueManager : MonoBehaviour
 
     private bool ShouldLoadScene(string choiceText)
     {
-        return choiceText == "Yes" || choiceText == "Yes, of course." || choiceText == "Ich werde es trotzdem versuchen.";
+        return choiceText == "Yes" || choiceText == "Yes, of course." || choiceText == "I'll try anyway!";
     }
 
 }
