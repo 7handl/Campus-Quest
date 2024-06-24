@@ -31,7 +31,7 @@ public class StartGame : MonoBehaviour
     {
         DisableMenuButtons();
 
-        SceneManager.LoadSceneAsync("Trainstation");
+        SceneManager.LoadSceneAsync("Dialog");
     }
 
     private void DisableMenuButtons()
