@@ -2311,7 +2311,7 @@ PrefabInstance:
     - target: {fileID: 4037660505584872615, guid: aea4bb20ee5966449907efea174cfcf6, type: 3}
       propertyPath: inkJSON
       value: 
-      objectReference: {fileID: 4900000, guid: fea2c01fa63e8bb4d9b9e983db087c4e, type: 3}
+      objectReference: {fileID: 4900000, guid: 3730ae9c1c8ffbe4e91d2342197d70fb, type: 3}
     - target: {fileID: 4037660505584872615, guid: aea4bb20ee5966449907efea174cfcf6, type: 3}
       propertyPath: miniGameName
       value: Pacman
