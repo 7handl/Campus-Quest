@@ -142,10 +142,10 @@ TextureImporter:
       name: gravestone_tiles_spritesheet_4_2
       rect:
         serializedVersion: 2
-        x: 31
-        y: 28
-        width: 16
-        height: 16
+        x: 17
+        y: 33
+        width: 14
+        height: 17
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,10 +184,10 @@ TextureImporter:
       name: gravestone_tiles_spritesheet_4_4
       rect:
         serializedVersion: 2
-        x: 0
-        y: 63
-        width: 16
-        height: 21
+        x: 3
+        y: 65
+        width: 10
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -205,10 +205,10 @@ TextureImporter:
       name: gravestone_tiles_spritesheet_4_5
       rect:
         serializedVersion: 2
-        x: 96
+        x: 98
         y: 96
-        width: 16
-        height: 16
+        width: 12
+        height: 17
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -289,10 +289,10 @@ TextureImporter:
       name: gravestone_tiles_spritesheet_4_9
       rect:
         serializedVersion: 2
-        x: 80
+        x: 82
         y: 64
-        width: 16
-        height: 16
+        width: 11
+        height: 13
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -436,10 +436,10 @@ TextureImporter:
       name: gravestone_tiles_spritesheet_4_16
       rect:
         serializedVersion: 2
-        x: 112
+        x: 116
         y: 32
-        width: 16
-        height: 29
+        width: 8
+        height: 15
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
