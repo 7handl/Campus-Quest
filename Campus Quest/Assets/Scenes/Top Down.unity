@@ -484,11 +484,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6086249425306696184, guid: 8d494d1953c3dfe4cbb39271a0bcbb2d, type: 3}
       propertyPath: maximumSpawnTime
-      value: 4
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6086249425306696184, guid: 8d494d1953c3dfe4cbb39271a0bcbb2d, type: 3}
       propertyPath: minimumSpawnTime
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1200,11 +1200,11 @@ PrefabInstance:
       objectReference: {fileID: 8466756635741027851, guid: 0f99d0939528e73469040e2ca51f4869, type: 3}
     - target: {fileID: 6086249425306696184, guid: 8d494d1953c3dfe4cbb39271a0bcbb2d, type: 3}
       propertyPath: maximumSpawnTime
-      value: 3
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 6086249425306696184, guid: 8d494d1953c3dfe4cbb39271a0bcbb2d, type: 3}
       propertyPath: minimumSpawnTime
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1300,11 +1300,11 @@ PrefabInstance:
       objectReference: {fileID: 1526213830471166808, guid: 90f0aee3c5144dd42b22676714e82909, type: 3}
     - target: {fileID: 6086249425306696184, guid: 8d494d1953c3dfe4cbb39271a0bcbb2d, type: 3}
       propertyPath: maximumSpawnTime
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6086249425306696184, guid: 8d494d1953c3dfe4cbb39271a0bcbb2d, type: 3}
       propertyPath: minimumSpawnTime
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
