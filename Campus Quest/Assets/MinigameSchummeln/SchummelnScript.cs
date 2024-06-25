@@ -33,7 +33,7 @@ public class SchummelnScript : MonoBehaviour
 
 
     private int deathCnt = 0;
-    
+
     public int timeLimit = 60;
     private float timeRemaining;
 
@@ -70,7 +70,7 @@ public class SchummelnScript : MonoBehaviour
             EndSequence();
         }
 
-        if (winPressCnt == pressCnt&&!inWonCutscene)
+        if (winPressCnt == pressCnt && !inWonCutscene)
         {
             inWonCutscene = true;
             StartCoroutine(GameWon());
@@ -87,7 +87,8 @@ public class SchummelnScript : MonoBehaviour
             {
                 StartCoroutine(RestartGame());
             }
-            else { StartCoroutine(StartMinigameSchummeln()); } }
+            else { StartCoroutine(StartMinigameSchummeln()); }
+        }
 
         if (inGame)
         {
@@ -97,7 +98,8 @@ public class SchummelnScript : MonoBehaviour
 
         if (inGame && Input.GetKeyDown(keyToPress))
         {
-            if (teacherState) {
+            if (teacherState)
+            {
                 StartCoroutine(GameLost("Du wurdest erwischt!"));
             }
 
@@ -125,7 +127,7 @@ public class SchummelnScript : MonoBehaviour
 
     public void UpdateTeacherVisual()
     {
-        
+
 
         if (teacherVisual != null)
         {
@@ -134,11 +136,12 @@ public class SchummelnScript : MonoBehaviour
             {
                 teacherVisual.sprite = teacherFront;
             }
-            else 
+            else
             {
-                teacherVisual.sprite = teacherBack;           }
+                teacherVisual.sprite = teacherBack;
+            }
 
-            
+
         }
     }
 
@@ -179,10 +182,10 @@ public class SchummelnScript : MonoBehaviour
         yield return new WaitForSeconds(4f);
         infoText.text = "Drücke Leertaste um das Minigame zurückzusetzen";
         ignoreInput = false;
-        
+
     }
 
-    
+
 
     private IEnumerator RestartGame()
     {
@@ -204,10 +207,11 @@ public class SchummelnScript : MonoBehaviour
         infoText.text = "Drücke Leertaste um in die Schule zurückzukehren";
         waitForReturn = true;
 
-        
+
     }
     private void EndSequence()
     {
         // Sequence wenn man 3mal verloren hat
     }
 }
+

@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class TimerUI : MonoBehaviour
 {
@@ -7,6 +8,7 @@ public class TimerUI : MonoBehaviour
     public float timeLimit; // 6 Minuten in Sekunden
     private float timeRemaining;
     private bool timerIsRunning = false;
+    private bool successScreenActive = false; // Um den Erfolgsscreen-Status zu verfolgen
 
     public TMP_Text timerText; // Referenz zum TextMeshPro-Textobjekt
     public GameObject successScreen; // Referenz zum Erfolgsscreen
@@ -35,6 +37,12 @@ public class TimerUI : MonoBehaviour
                 ShowSuccessScreen();
             }
         }
+
+        // Überprüfen, ob der Erfolgsscreen aktiv ist und die Leertaste gedrückt wird
+        if (successScreenActive && Input.GetKeyDown(KeyCode.Space))
+        {
+            ReturnToSchool();
+        }
     }
 
     void UpdateTimerUI(float timeToDisplay)
@@ -49,8 +57,17 @@ public class TimerUI : MonoBehaviour
     {
         successScreen.SetActive(true);
         Time.timeScale = 0f; // Spielzeit anhalten
+        successScreenActive = true; // Erfolgsscreen ist jetzt aktiv
+    }
+
+    void ReturnToSchool()
+    {
+        Time.timeScale = 1f; // Spielzeit fortsetzen
+        successScreenActive = false; // Erfolgsscreen ist nicht mehr aktiv
+        SceneManager.LoadScene("Dialog"); // Ändern Sie "SchoolScene" in den Namen der entsprechenden Szene
     }
 }
+
 
 
 

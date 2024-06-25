@@ -14,7 +14,7 @@ public class DialogueTrigger : MonoBehaviour, IDataPersistence
 
     private bool playerInRange;
 
-    private bool completed = false;
+    public bool completed = false;
 
     [SerializeField] private string miniGameName;
 
@@ -26,7 +26,7 @@ public class DialogueTrigger : MonoBehaviour, IDataPersistence
         id = System.Guid.NewGuid().ToString();
     }
 
-    private void Awake() 
+    private void Awake()
     {
         playerInRange = false;
         visualCue.SetActive(false);
@@ -50,12 +50,12 @@ public class DialogueTrigger : MonoBehaviour, IDataPersistence
         data.miniGameCompleted.Add(id, completed);
     }
 
-    private void Update() 
+    private void Update()
     {
-        if (playerInRange && !DialogueManager.GetInstance().dialogueIsPlaying) 
+        if (playerInRange && !DialogueManager.GetInstance().dialogueIsPlaying)
         {
             visualCue.SetActive(true);
-            if (InputManager.GetInstance().GetInteractPressed()) 
+            if (InputManager.GetInstance().GetInteractPressed())
             {
                 StartCoroutine(waiter());
                 IEnumerator waiter()
@@ -63,16 +63,16 @@ public class DialogueTrigger : MonoBehaviour, IDataPersistence
                     yield return new WaitForSeconds(0.2f);
                     DialogueManager.GetInstance().EnterDialogueMode(inkJSON, miniGameName);
                 }
-                
+
             }
         }
-        else 
+        else
         {
             visualCue.SetActive(false);
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collider) 
+    private void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.gameObject.tag == "Player")
         {
@@ -80,7 +80,7 @@ public class DialogueTrigger : MonoBehaviour, IDataPersistence
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collider) 
+    private void OnTriggerExit2D(Collider2D collider)
     {
         if (collider.gameObject.tag == "Player")
         {

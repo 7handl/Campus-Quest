@@ -10,38 +10,45 @@ public class HealthController : MonoBehaviour
     [SerializeField]
     private float maximumHealth;
     [SerializeField]
-    private SpriteRenderer spriteRenderer; // Der Sprite Renderer des Charakters
+    private SpriteRenderer spriteRenderer;
     [SerializeField]
-    private Sprite deathSprite; // Das Sprite, das beim Tod angezeigt wird
+    private Sprite deathSprite;
     [SerializeField]
-    private HealthbarUI healthbarUI; // Referenz zur Healthbar UI
+    private HealthbarUI healthbarUI;
 
-    private Rigidbody2D rb2d; // Referenz zum Rigidbody2D des Spielers
-    private Collider2D col2d; // Referenz zum Collider2D des Spielers
+    private Rigidbody2D rb2d;
+    private Collider2D col2d;
 
-    [SerializeField]
-    private GameOverManager gameOverManager; // Referenz zum GameOverManager
+    private GameOverManager gameOverManager;
 
-    public float RemainingHealthPercentage
-    {
-        get
-        {
-            return currentHealth / maximumHealth;
-        }
-    }
+    public float RemainingHealthPercentage => currentHealth / maximumHealth;
 
     public bool IsInvincible { get; set; }
 
     public UnityEvent OnDied;
-
     public UnityEvent OnDamaged;
-
     public UnityEvent OnHealthChanged;
 
     private void Awake()
     {
         rb2d = GetComponent<Rigidbody2D>();
         col2d = GetComponent<Collider2D>();
+
+        if (spriteRenderer == null)
+        {
+            Debug.LogError("SpriteRenderer is not assigned!");
+        }
+
+        if (healthbarUI == null)
+        {
+            Debug.LogError("HealthbarUI is not assigned!");
+        }
+
+        gameOverManager = GameOverManager.instance;
+        if (gameOverManager == null)
+        {
+            Debug.LogError("GameOverManager is not assigned!");
+        }
     }
 
     private void Start()
@@ -62,6 +69,7 @@ public class HealthController : MonoBehaviour
         }
 
         currentHealth -= damageAmount;
+        Debug.Log("Player took damage, current health: " + currentHealth);
 
         OnHealthChanged.Invoke();
         UpdateHealthUI();
@@ -89,6 +97,7 @@ public class HealthController : MonoBehaviour
         }
 
         currentHealth += amountToAdd;
+        Debug.Log("Player healed, current health: " + currentHealth);
 
         OnHealthChanged.Invoke();
         UpdateHealthUI();
@@ -106,23 +115,26 @@ public class HealthController : MonoBehaviour
             spriteRenderer.sprite = deathSprite;
         }
 
-        // Set Rigidbody2D to Kinematic to prevent movement
         if (rb2d != null)
         {
             rb2d.bodyType = RigidbodyType2D.Kinematic;
         }
 
-        // Disable Collider2D to prevent further collisions
         if (col2d != null)
         {
             col2d.enabled = false;
         }
 
         OnDied.Invoke();
+        Debug.Log("Player died");
 
         if (gameOverManager != null)
         {
-            gameOverManager.ShowGameOverScreen();
+            gameOverManager.OnPlayerDeath();
+        }
+        else
+        {
+            Debug.LogError("GameOverManager is not assigned or OnPlayerDeath method is missing!");
         }
     }
 
@@ -132,6 +144,25 @@ public class HealthController : MonoBehaviour
         {
             healthbarUI.UpdateHealthBar(this);
         }
+        else
+        {
+            Debug.LogError("HealthbarUI is not assigned!");
+        }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

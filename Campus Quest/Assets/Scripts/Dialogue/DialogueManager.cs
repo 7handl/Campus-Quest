@@ -8,6 +8,7 @@ using System.Reflection;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using System.Linq;
+using System;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -20,7 +21,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private GameObject[] choices;
     private TextMeshProUGUI[] choicesText;
 
-  
+
     private Story currentStory;
     public bool dialogueIsPlaying { get; private set; }
 
@@ -72,7 +73,7 @@ public class DialogueManager : MonoBehaviour
         // NOTE: The 'currentStory.currentChoiecs.Count == 0' part was to fix a bug after the Youtube video was made
         if (currentStory.currentChoices.Count == 0 && InputManager.GetInstance().GetSubmitPressed())
         {
-            
+
             ContinueStory();
         }
     }
@@ -100,7 +101,7 @@ public class DialogueManager : MonoBehaviour
         {
             SceneManager.LoadScene(miniGameSceneName);
         }
-        
+
     }
 
     private void ContinueStory()
@@ -133,7 +134,7 @@ public class DialogueManager : MonoBehaviour
             SpeechToText.GetInstance().ActivateSTT();
         }
         else { SpeechToText.GetInstance().DeActivateSTT(); }
-        
+
 
         int index = 0;
         // enable and initialize the choices up to the amount of choices for this line of dialogue
@@ -161,13 +162,13 @@ public class DialogueManager : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(choices[0].gameObject);
     }
 
-    
-    
+
+
 
     public void MakeChoice(int choiceIndex)
     {
         selectedChoiceText = currentStory.currentChoices[choiceIndex].text;
-        
+
         currentStory.ChooseChoiceIndex(choiceIndex);
         // NOTE: The below two lines were added to fix a bug after the Youtube video was made
         InputManager.GetInstance().RegisterSubmitPressed(); // this is specific to my InputManager script
@@ -181,7 +182,10 @@ public class DialogueManager : MonoBehaviour
 
     private bool ShouldLoadScene(string choiceText)
     {
-        return choiceText == "Yes" || choiceText == "Yes, of course." || choiceText == "I'll try anyway!";
+        return choiceText == "Yes" || choiceText == "Yes, of course." || choiceText == "I'll try anyway!" || choiceText == "I know what it is";
     }
 
+
 }
+
+
