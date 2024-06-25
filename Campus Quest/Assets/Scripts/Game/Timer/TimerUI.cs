@@ -64,7 +64,7 @@ public class TimerUI : MonoBehaviour
     {
         Time.timeScale = 1f; // Spielzeit fortsetzen
         successScreenActive = false; // Erfolgsscreen ist nicht mehr aktiv
-        SceneManager.LoadScene("Dialog"); // Ändern Sie "SchoolScene" in den Namen der entsprechenden Szene
+        SceneManager.LoadScene("MainMenu"); // Ändern Sie "SchoolScene" in den Namen der entsprechenden Szene
     }
 }
 

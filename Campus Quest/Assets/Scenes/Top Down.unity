@@ -328,7 +328,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeLimit: 360
   timerText: {fileID: 271586350}
-  successScreen: {fileID: 549926764}
+  successScreen: {fileID: 600220482}
 --- !u!114 &271586350
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -944,11 +944,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 544620654}
   m_CullTransparentMesh: 1
---- !u!1 &549926764 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5675230387344879690, guid: 889b5376d6cd6be46bc874edfceba373, type: 3}
-  m_PrefabInstance: {fileID: 3770706094822664796}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &549926765 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7861481741903613131, guid: 889b5376d6cd6be46bc874edfceba373, type: 3}
@@ -1098,6 +1093,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 593608631}
   m_CullTransparentMesh: 1
+--- !u!1 &600220482 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1482694239689667435, guid: 4b6c7318699cbca4fb19112cbfddda20, type: 3}
+  m_PrefabInstance: {fileID: 6195830423328140675}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
